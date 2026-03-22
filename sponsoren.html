@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponsoren & Partner — Hannes Brune · Profi Boxer</title>
+  <meta name="description" content="Sponsoren und Partner von Hannes Brune. Werden Sie Teil der Geschichte eines aufstrebenden deutschen Profiboxers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .sponsor-tier-title {
+      font-family: var(--font-condensed);
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1px;
+      padding: 1.5rem 2.5rem;
+      background: var(--dark-1);
+      border: 1px solid var(--gray-3);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .sponsor-tier-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gray-3);
+    }
+    .sponsor-item--future {
+      border: 1px dashed rgba(212,27,27,0.2);
+      background: transparent !important;
+    }
+    .sponsor-item--future:hover {
+      background: rgba(212,27,27,0.04) !important;
+      border-color: rgba(212,27,27,0.4) !important;
+    }
+    .sponsor-item--future .sponsor-logo {
+      border-style: dashed;
+      border-color: rgba(212,27,27,0.2);
+      color: rgba(212,27,27,0.3);
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+    }
+    .sponsor-item--future:hover .sponsor-logo {
+      border-color: rgba(212,27,27,0.5);
+      color: rgba(212,27,27,0.5);
+    }
+    .sponsor-item--future .sponsor-cat {
+      color: rgba(212,27,27,0.4);
+    }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--gray-3);
+      margin-top: 3rem;
+    }
+    .package-card {
+      padding: 3.5rem 2.5rem;
+      border-right: 1px solid var(--gray-3);
+      position: relative;
+      transition: background 0.3s;
+    }
+    .package-card:last-child { border-right: none; }
+    .package-card:hover { background: var(--dark-3); }
+    .package-card--featured {
+      background: var(--dark-2);
+      border-top: 2px solid var(--gold);
+    }
+    .package-card--featured:hover { background: var(--dark-3); }
+    .package-tier {
+      font-family: var(--font-condensed);
+      font-size: 0.68rem;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .package-name {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--cream);
+      margin-bottom: 2rem;
+      line-height: 1;
+    }
+    .package-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .package-features li {
+      font-family: var(--font-condensed);
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      color: var(--gray-1);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .package-features li::before {
+      content: '—';
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+    @media (max-width: 768px) {
+      .packages-grid { grid-template-columns: 1fr; }
+      .package-card { border-right: none; border-bottom: 1px solid var(--gray-3); }
+      .package-card:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-veil"></div>
+
+  <nav class="nav" id="mainNav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">HANNES <span>BRUNE</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="ueber-hannes.html">Über Hannes</a></li>
+        <li><a href="kaempfe.html">Kämpfe</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="sponsoren.html" class="active">Sponsoren</a></li>
+        <li><a href="kontakt.html" class="nav__cta-btn">Kontakt</a></li>
+      </ul>
+      <button class="nav__burger" id="burgerBtn" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="index.html">Start</a>
+    <a href="ueber-hannes.html">Über Hannes</a>
+    <a href="kaempfe.html">Kämpfe</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="sponsoren.html">Sponsoren</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero__bg" style="background: radial-gradient(ellipse 55% 85% at 75% 50%, rgba(212,27,27,0.12) 0%, transparent 60%), var(--dark-1);"></div>
+      <div class="page-hero__overlay"></div>
+      <div class="page-hero__content">
+        <div class="page-hero__tag">Partner & Sponsoren</div>
+        <h1 class="page-hero__title">Sponsoren</h1>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container">
+
+        <!-- INTRO -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:6rem; margin-bottom:7rem; align-items:start;">
+          <div class="reveal-left">
+            <div class="gold-tag" style="margin-bottom:1.5rem;">Warum Hannes Brune?</div>
+            <h2 style="margin-bottom:1.5rem; font-size:clamp(2.5rem,5vw,4.5rem);">Investiere in<br>echten Charakter.</h2>
+            <div class="divider"></div>
+            <p style="font-family:var(--font-body); font-weight:300; font-size:1.05rem; color:var(--gray-1); line-height:1.9; margin-top:1.5rem;">
+              Hannes Brune steht nicht für Glanz und Glamour. Er steht für Arbeit.
+              Für Wille. Für Ehrlichkeit. Als Sponsor von Hannes verbinden Sie Ihre Marke
+              mit einem Athleten, dem echte Menschen folgen — weil sie ihn kennen, respektieren, anfeuern.
+            </p>
+            <p style="font-family:var(--font-body); font-weight:300; font-size:1.05rem; color:var(--gray-1); line-height:1.9; margin-top:1rem;">
+              Kein überproduzierter Content. Kein Fake. Nur ein Boxer aus Kiel, der seinen Weg geht.
+              <strong style="color:var(--cream);">Und die Menschen, die ihn dabei begleiten.</strong>
+            </p>
+          </div>
+          <div class="reveal-right" style="display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--gray-3);">
+            <div style="background:var(--dark-2); padding:2.5rem 2rem; text-align:center;">
+              <div style="font-family:var(--font-display); font-size:3.5rem; color:var(--gold);" data-counter="8">8</div>
+              <div style="font-family:var(--font-condensed); font-size:0.68rem; letter-spacing:0.25em; color:var(--gray-2); margin-top:0.3rem; text-transform:uppercase;">Kämpfe gestreamt</div>
+            </div>
+            <div style="background:var(--dark-2); padding:2.5rem 2rem; text-align:center;">
+              <div style="font-family:var(--font-display); font-size:3.5rem; color:var(--gold);">4+</div>
+              <div style="font-family:var(--font-condensed); font-size:0.68rem; letter-spacing:0.25em; color:var(--gray-2); margin-top:0.3rem; text-transform:uppercase;">Länder präsent</div>
+            </div>
+            <div style="background:var(--dark-2); padding:2.5rem 2rem; text-align:center;">
+              <div style="font-family:var(--font-display); font-size:3.5rem; color:var(--gold);">18–35</div>
+              <div style="font-family:var(--font-condensed); font-size:0.68rem; letter-spacing:0.25em; color:var(--gray-2); margin-top:0.3rem; text-transform:uppercase;">Kernzielgruppe</div>
+            </div>
+            <div style="background:var(--dark-2); padding:2.5rem 2rem; text-align:center;">
+              <div style="font-family:var(--font-display); font-size:3.5rem; color:var(--gold);">Nord</div>
+              <div style="font-family:var(--font-condensed); font-size:0.68rem; letter-spacing:0.25em; color:var(--gray-2); margin-top:0.3rem; text-transform:uppercase;">Deutschlands Fokus</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BENEFITS -->
+        <div class="benefits-grid reveal">
+          <div class="benefit-item">
+            <div class="benefit-item__num">01</div>
+            <div class="benefit-item__title">Logo-Präsenz</div>
+            <p class="benefit-item__text">Ihr Logo auf Kampfkleidung, Banden, Social-Media-Content und der offiziellen Webseite.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-item__num">02</div>
+            <div class="benefit-item__title">Content-Kooperation</div>
+            <p class="benefit-item__text">Gemeinsame Posts, Behind-the-Scenes Content, exklusive Hintergrundberichte für Ihre Kanäle.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-item__num">03</div>
+            <div class="benefit-item__title">Event-Visibility</div>
+            <p class="benefit-item__text">VIP-Tickets zu Kampfveranstaltungen. Namensnennung bei offiziellen Pressemitteilungen und Ankündigungen.</p>
+          </div>
+        </div>
+
+        <!-- CURRENT SPONSORS -->
+        <div style="margin-top:7rem;" class="reveal">
+          <div class="sponsor-tier-title">Hauptsponsoren</div>
+          <div class="sponsors-grid">
+            <div class="sponsor-item sponsor-item--active">
+              <div class="sponsor-logo">KIEL SPORTS</div>
+              <div class="sponsor-cat">Hauptsponsor · Sportbekleidung</div>
+            </div>
+            <div class="sponsor-item sponsor-item--active">
+              <div class="sponsor-logo">NORDIC GYM</div>
+              <div class="sponsor-cat">Trainingspartner · Equipment</div>
+            </div>
+            <div class="sponsor-item sponsor-item--active">
+              <div class="sponsor-logo">BOX DE</div>
+              <div class="sponsor-cat">Medienpartner · Deutschland</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:1px;" class="reveal">
+          <div class="sponsor-tier-title">Projektpartner</div>
+          <div class="sponsors-grid">
+            <div class="sponsor-item sponsor-item--active">
+              <div class="sponsor-logo">HAFEN GYM</div>
+              <div class="sponsor-cat">Trainingspartner · Kiel</div>
+            </div>
+            <div class="sponsor-item sponsor-item--future">
+              <div class="sponsor-logo">DEIN LOGO</div>
+              <div class="sponsor-cat">Platz verfügbar</div>
+            </div>
+            <div class="sponsor-item sponsor-item--future">
+              <div class="sponsor-logo">DEIN LOGO</div>
+              <div class="sponsor-cat">Platz verfügbar</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PACKAGES -->
+        <div style="margin-top:7rem;" class="reveal">
+          <div class="gold-tag" style="margin-bottom:1.5rem;">Sponsoring-Pakete 2024</div>
+          <h2 style="margin-bottom:0.75rem; font-size:clamp(2.5rem,5vw,4.5rem);">Pakete & Leistungen</h2>
+          <p style="font-family:var(--font-body); font-weight:300; font-size:1rem; color:var(--gray-2); max-width:500px;">
+            Individuelle Lösungen sind möglich. Kontaktieren Sie das Management für ein persönliches Gespräch.
+          </p>
+
+          <div class="packages-grid">
+            <div class="package-card">
+              <div class="package-tier">Bronze</div>
+              <div class="package-name">Supporter</div>
+              <ul class="package-features">
+                <li>Logo auf der Webseite</li>
+                <li>2× Social-Media-Mention</li>
+                <li>1× Kampf-Ticket</li>
+                <li>Nennung in Pressemitteilungen</li>
+              </ul>
+              <a href="kontakt.html" class="btn btn--outline" style="font-size:0.72rem; padding:0.7rem 1.5rem;">Anfrage senden</a>
+            </div>
+            <div class="package-card package-card--featured">
+              <div class="package-tier">Gold — Empfohlen</div>
+              <div class="package-name">Partner</div>
+              <ul class="package-features">
+                <li>Logo auf Kampfkleidung</li>
+                <li>Exklusiver Content (4×/Monat)</li>
+                <li>4× VIP-Kampf-Tickets</li>
+                <li>Gemeinsame Pressearbeit</li>
+                <li>Hintergrundberichte für Ihr Social</li>
+              </ul>
+              <a href="kontakt.html" class="btn btn--gold" style="font-size:0.72rem; padding:0.7rem 1.5rem;">Anfrage senden</a>
+            </div>
+            <div class="package-card">
+              <div class="package-tier">Platin</div>
+              <div class="package-name">Hauptsponsor</div>
+              <ul class="package-features">
+                <li>Naming-Rights (Kampf-Trikot)</li>
+                <li>Exklusiver Behind-the-Scenes-Zugang</li>
+                <li>10× VIP-Tickets pro Event</li>
+                <li>Gemeinsame Kampagnen & Shoots</li>
+                <li>Management-Briefings</li>
+              </ul>
+              <a href="kontakt.html" class="btn btn--outline" style="font-size:0.72rem; padding:0.7rem 1.5rem;">Anfrage senden</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA BLOCK -->
+        <div class="partner-cta-block reveal" style="margin-top:5rem;">
+          <h2>Bereit, Teil der<br>Geschichte zu sein?</h2>
+          <p>Kontaktieren Sie das Management für ein persönliches Gespräch. Jedes Sponsoring wird individuell abgestimmt.</p>
+          <a href="kontakt.html" class="btn btn--gold">Jetzt Kontakt aufnehmen <span class="btn-arrow">→</span></a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">HANNES <span>BRUNE</span></div>
+          <p class="footer__tagline">„Kampf ist keine Option. Es ist mein Weg."</p>
+          <div class="footer__social" style="margin-top:1.5rem;">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigation</div>
+          <nav class="footer__links">
+            <a href="index.html">Startseite</a>
+            <a href="ueber-hannes.html">Über Hannes</a>
+            <a href="kaempfe.html">Kampfbilanz</a>
+            <a href="galerie.html">Galerie</a>
+          </nav>
+        </div>
+        <div>
+          <div class="footer__col-title">Mehr</div>
+          <nav class="footer__links">
+            <a href="sponsoren.html">Sponsoren</a>
+            <a href="kontakt.html">Kontakt</a>
+          </nav>
+        </div>
+        <div>
+          <div class="footer__col-title">Kontakt</div>
+          <div class="footer__links">
+            <span style="font-family:var(--font-condensed); font-size:0.88rem; color:var(--gray-2);">management@hannesbrune.de</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">© 2024 Hannes Brune. Alle Rechte vorbehalten.</span>
+        <span class="footer__copy">Kiel · Deutschland</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

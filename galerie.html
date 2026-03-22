@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie — Hannes Brune · Profi Boxer</title>
+  <meta name="description" content="Bilder und Media von Hannes Brune — Training, Kämpfe und Behind-the-Scenes aus Kiel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .gallery-filter {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .filter-btn {
+      font-family: var(--font-condensed);
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gray-2);
+      border: 1px solid var(--gray-3);
+      background: transparent;
+      padding: 0.5rem 1.25rem;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+    }
+    /* Gallery SVG icons */
+    .gi-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+    .gi-icon svg { width: 45%; height: 45%; }
+    .gallery-section { padding: 3rem 0 9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="page-veil"></div>
+
+  <nav class="nav" id="mainNav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">HANNES <span>BRUNE</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="ueber-hannes.html">Über Hannes</a></li>
+        <li><a href="kaempfe.html">Kämpfe</a></li>
+        <li><a href="galerie.html" class="active">Galerie</a></li>
+        <li><a href="sponsoren.html">Sponsoren</a></li>
+        <li><a href="kontakt.html" class="nav__cta-btn">Kontakt</a></li>
+      </ul>
+      <button class="nav__burger" id="burgerBtn" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="index.html">Start</a>
+    <a href="ueber-hannes.html">Über Hannes</a>
+    <a href="kaempfe.html">Kämpfe</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="sponsoren.html">Sponsoren</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero__bg" style="background: radial-gradient(ellipse 55% 80% at 70% 50%, rgba(212,27,27,0.1) 0%, transparent 60%), var(--dark-1);"></div>
+      <div class="page-hero__overlay"></div>
+      <div class="page-hero__content">
+        <div class="page-hero__tag">Bilder & Media</div>
+        <h1 class="page-hero__title">Galerie</h1>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section">
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:3rem;" class="reveal">
+          <div>
+            <div class="gold-tag" style="margin-bottom:0.75rem;">Kiel · Hamburg · Berlin · Paris</div>
+            <p style="font-family:var(--font-body); font-weight:300; font-size:1rem; color:var(--gray-2); max-width:480px;">
+              Training. Kampf. Leben. Ein Blick hinter die Kulissen eines aufstrebenden Profiboxers.
+            </p>
+          </div>
+          <div class="gallery-filter">
+            <button class="filter-btn active">Alle</button>
+            <button class="filter-btn">Training</button>
+            <button class="filter-btn">Kampf</button>
+            <button class="filter-btn">Behind the Scenes</button>
+          </div>
+        </div>
+
+        <div class="gallery-grid reveal">
+
+          <!-- Item 1 – wide — REAL PHOTO: BoxZentrum Kiel Jeep -->
+          <div class="gallery-item gallery-item--wide gi-1">
+            <img class="gallery-item__photo" src="images/img-jeep.jpg" alt="Hannes Brune — BoxZentrum Kiel">
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__overlay-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              </div>
+            </div>
+            <div class="gallery-item__label">
+              <div class="gallery-item__label-tag">BoxZentrum Kiel</div>
+              <div class="gallery-item__label-title">Heimatboden · Kiel</div>
+            </div>
+          </div>
+
+          <!-- Item 2 — REAL PHOTO: Belt + McLaren -->
+          <div class="gallery-item gi-2">
+            <img class="gallery-item__photo" src="images/img-belt.jpg" alt="Hannes Brune mit Titelgürtel">
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__overlay-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              </div>
+            </div>
+            <div class="gallery-item__label">
+              <div class="gallery-item__label-tag">Champion</div>
+              <div class="gallery-item__label-title">Titelgürtel · 2024</div>
+            </div>
+          </div>
+
+          <!-- Item 3 – tall — REAL PHOTO: Motorcycle -->
+          <div class="gallery-item gallery-item--tall gi-3">
+            <img class="gallery-item__photo" src="images/img-moto.jpg" alt="Hannes Brune" style="object-position: center top;">
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__overlay-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              </div>
+            </div>
+            <div class="gallery-item__label">
+              <div class="gallery-item__label-tag">Lifestyle</div>
+              <div class="gallery-item__label-title">Hannes Brune · Kiel</div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="gallery-item gi-4">
+            <div class="gallery-item__bg"></div>
+            <div class="gallery-item__visual">GYM</div>
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__overlay-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              </div>
+            </div>
+            <div class="gallery-item__label">
+              <div class="gallery-item__label-tag">Training</div>
+              <div class="gallery-item__label-title">Gym · Kiel</div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="gallery-item gi-5">
+            <div class="gallery-item__bg"></div>
+            <div class="gallery-item__visual">RING</div>
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__overlay-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              </div>
+            </div>
+            <div class="gallery-item__label">
+              <div class="gallery-item__label-tag">Kampf</div>
+              <div class="gallery-item__label-title">Im Ring · Paris 2023</div>
+            </div>
+          </div>
+
+          <!-- Item 6 – wide -->
+          <div class="gallery-item gallery-item--wide gi-6">
+            <div class="gallery-item__bg"></div>
+            <div class="gi-icon">
+              <svg viewBox="0 0 200 80" fill="none" stroke="#D41B1B" stroke-width="1">
+                <path d="M10 20 Q60 5 100 40 Q140 75 190 60"/>
+                <path d="M10 40 Q60 25 100 60 Q140 90 190 75" opacity="0.5"/>
+                <circle cx="100" cy="40" r="15" stroke-width="0.5"/>
+                <line x1="0" y1="0" x2="0" y2="80" stroke-width="0.5"/>
+                <line x1="200" y1="0" x2="200" y2="80" stroke-width="0.5"/>
+                <line x1="0" y1="0" x2="200" y2="0" stroke-width="0.5"/>
+                <line x1="0" y1="80" x2="200" y2="80" stroke-width="0.5"/>
+              </svg>
+            </div>
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__overlay-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              </div>
+            </div>
+            <div class="gallery-item__label">
+              <div class="gallery-item__label-tag">Behind the Scenes</div>
+              <div class="gallery-item__label-title">Förde · Kiel · Heimat</div>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="gallery-item gi-7">
+            <div class="gallery-item__bg"></div>
+            <div class="gallery-item__visual">WIN</div>
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__overlay-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              </div>
+            </div>
+            <div class="gallery-item__label">
+              <div class="gallery-item__label-tag">Sieg</div>
+              <div class="gallery-item__label-title">Siegerpose · Rostock</div>
+            </div>
+          </div>
+
+          <!-- Item 8 -->
+          <div class="gallery-item gi-8">
+            <div class="gallery-item__bg"></div>
+            <div class="gallery-item__visual">HB</div>
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__overlay-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              </div>
+            </div>
+            <div class="gallery-item__label">
+              <div class="gallery-item__label-tag">Training</div>
+              <div class="gallery-item__label-title">Roadwork · Kiel</div>
+            </div>
+          </div>
+
+          <!-- Item 9 -->
+          <div class="gallery-item gi-9">
+            <div class="gallery-item__bg"></div>
+            <div class="gallery-item__visual">KI</div>
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__overlay-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              </div>
+            </div>
+            <div class="gallery-item__label">
+              <div class="gallery-item__label-tag">Heimat</div>
+              <div class="gallery-item__label-title">Kiel · Hafen</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Instagram CTA -->
+        <div style="text-align:center; padding:5rem 0 2rem;" class="reveal">
+          <div class="gold-tag" style="justify-content:center; margin-bottom:1.5rem;">Social Media</div>
+          <h3 style="font-size:clamp(2rem, 4vw, 3.5rem); margin-bottom:1.5rem;">Mehr Content<br>auf Instagram</h3>
+          <p style="font-family:var(--font-body); font-weight:300; font-size:1rem; color:var(--gray-2); margin-bottom:2.5rem;">
+            Tägliche Einblicke: Training, Kämpfe, das Leben als Profiboxer aus Kiel.
+          </p>
+          <a href="#" class="btn btn--gold">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="flex-shrink:0;"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+            @hannesbrune
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">HANNES <span>BRUNE</span></div>
+          <p class="footer__tagline">„Kampf ist keine Option. Es ist mein Weg."</p>
+          <div class="footer__social" style="margin-top:1.5rem;">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigation</div>
+          <nav class="footer__links">
+            <a href="index.html">Startseite</a>
+            <a href="ueber-hannes.html">Über Hannes</a>
+            <a href="kaempfe.html">Kampfbilanz</a>
+            <a href="galerie.html">Galerie</a>
+          </nav>
+        </div>
+        <div>
+          <div class="footer__col-title">Mehr</div>
+          <nav class="footer__links">
+            <a href="sponsoren.html">Sponsoren</a>
+            <a href="kontakt.html">Kontakt</a>
+          </nav>
+        </div>
+        <div>
+          <div class="footer__col-title">Kontakt</div>
+          <div class="footer__links">
+            <span style="font-family:var(--font-condensed); font-size:0.88rem; color:var(--gray-2);">management@hannesbrune.de</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">© 2024 Hannes Brune. Alle Rechte vorbehalten.</span>
+        <span class="footer__copy">Kiel · Deutschland</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Gallery filter (UI only)
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

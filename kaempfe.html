@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kämpfe & Record — Hannes Brune · Profi Boxer</title>
+  <meta name="description" content="Die Kampfbilanz von Hannes Brune: 8-0-0 mit 5 KO Siegen. Alle Kämpfe, Gegner und Ergebnisse im Überblick.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .record-intro {
+      padding: 6rem 0 4rem;
+      border-bottom: 1px solid var(--gray-3);
+      margin-bottom: 5rem;
+    }
+    .record-intro p {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: var(--gray-1);
+      max-width: 560px;
+      line-height: 1.85;
+    }
+    .fights-section-title {
+      font-family: var(--font-condensed);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .fights-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gray-3);
+    }
+    .fight-card-header {
+      display: grid;
+      grid-template-columns: 5rem 1fr auto auto;
+      gap: 2rem;
+      padding: 0.75rem 2.5rem;
+      border-bottom: 1px solid var(--gray-3);
+      margin-bottom: 2px;
+    }
+    .fight-card-header span {
+      font-family: var(--font-condensed);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      color: var(--gray-3);
+      text-transform: uppercase;
+    }
+    .ko-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-condensed);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      border: 1px solid rgba(212,27,27,0.3);
+      background: rgba(212,27,27,0.06);
+      padding: 0.2rem 0.6rem;
+      margin-left: 0.5rem;
+    }
+    .ko-badge::before { content: '⚡'; font-size: 0.6rem; }
+  </style>
+</head>
+<body>
+
+  <div class="page-veil"></div>
+
+  <nav class="nav" id="mainNav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">HANNES <span>BRUNE</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="ueber-hannes.html">Über Hannes</a></li>
+        <li><a href="kaempfe.html" class="active">Kämpfe</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="sponsoren.html">Sponsoren</a></li>
+        <li><a href="kontakt.html" class="nav__cta-btn">Kontakt</a></li>
+      </ul>
+      <button class="nav__burger" id="burgerBtn" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="index.html">Start</a>
+    <a href="ueber-hannes.html">Über Hannes</a>
+    <a href="kaempfe.html">Kämpfe</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="sponsoren.html">Sponsoren</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <img class="page-hero__img" src="images/img-belt.jpg" alt="Hannes Brune mit Titelgürtel" loading="eager">
+      <div class="page-hero__overlay" style="background: linear-gradient(to top, var(--black) 0%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0.45) 100%);"></div>
+      <div class="page-hero__content">
+        <div class="page-hero__tag">Professionelle Kampfbilanz</div>
+        <h1 class="page-hero__title">Kämpfe &amp;<br>Record</h1>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <!-- INTRO -->
+      <div class="record-intro reveal">
+        <div class="gold-tag" style="margin-bottom:1.25rem;">Weltergewicht · 66,7 kg</div>
+        <p>
+          8 Profikämpfe. 8 Siege. 5 Stopps. Hannes Brune ist ungeschlagen und hungrig.
+          Jeder Kampf war ein Test — keiner ein Selbstläufer. Die Bilanz spricht. Der Weg geht weiter.
+        </p>
+      </div>
+
+      <!-- RECORD HEADER -->
+      <div class="record-header reveal">
+        <div class="record-cell record-cell--wins">
+          <div class="record-cell__num" data-counter="8">8</div>
+          <div class="record-cell__lbl">Siege</div>
+        </div>
+        <div class="record-cell record-cell--losses">
+          <div class="record-cell__num">0</div>
+          <div class="record-cell__lbl">Niederlagen</div>
+        </div>
+        <div class="record-cell record-cell--draws">
+          <div class="record-cell__num">0</div>
+          <div class="record-cell__lbl">Unentschieden</div>
+        </div>
+      </div>
+
+      <!-- FIGHT LIST -->
+      <div class="reveal">
+        <div class="fights-section-title">Kampfhistorie · Chronologisch</div>
+
+        <!-- Column headers -->
+        <div class="fight-card-header">
+          <span>Ergebnis</span>
+          <span>Gegner</span>
+          <span>Methode</span>
+          <span>Datum</span>
+        </div>
+
+        <!-- Fight 8 (most recent) -->
+        <div class="fight-card win">
+          <div class="fight-result">SIEG</div>
+          <div class="fight-info">
+            <h4>Jake Thompson</h4>
+            <div class="fight-meta">
+              GBR · Hamburg, Deutschland · WBO International
+              <span class="ko-badge">KO</span>
+            </div>
+          </div>
+          <div class="fight-method">
+            <span class="fight-badge">KO R2</span>
+          </div>
+          <div class="fight-date">Dez. 2023</div>
+        </div>
+
+        <!-- Fight 7 -->
+        <div class="fight-card win">
+          <div class="fight-result">SIEG</div>
+          <div class="fight-info">
+            <h4>Sergei Nesterov</h4>
+            <div class="fight-meta">
+              UKR · Rostock, Deutschland
+              <span class="ko-badge">KO</span>
+            </div>
+          </div>
+          <div class="fight-method">
+            <span class="fight-badge">KO R4</span>
+          </div>
+          <div class="fight-date">Aug. 2023</div>
+        </div>
+
+        <!-- Fight 6 -->
+        <div class="fight-card win">
+          <div class="fight-result">SIEG</div>
+          <div class="fight-info">
+            <h4>André Dubois</h4>
+            <div class="fight-meta">FRA · Paris, Frankreich</div>
+          </div>
+          <div class="fight-method">
+            <span class="fight-badge">PTS R6</span>
+          </div>
+          <div class="fight-date">Apr. 2023</div>
+        </div>
+
+        <!-- Fight 5 -->
+        <div class="fight-card win">
+          <div class="fight-result">SIEG</div>
+          <div class="fight-info">
+            <h4>Carlos Moreno</h4>
+            <div class="fight-meta">
+              ESP · Kiel, Deutschland
+              <span class="ko-badge">KO</span>
+            </div>
+          </div>
+          <div class="fight-method">
+            <span class="fight-badge">KO R2</span>
+          </div>
+          <div class="fight-date">Jan. 2023</div>
+        </div>
+
+        <!-- Fight 4 -->
+        <div class="fight-card win">
+          <div class="fight-result">SIEG</div>
+          <div class="fight-info">
+            <h4>Sven Müller</h4>
+            <div class="fight-meta">GER · Hamburg, Deutschland</div>
+          </div>
+          <div class="fight-method">
+            <span class="fight-badge">PTS R6</span>
+          </div>
+          <div class="fight-date">Sep. 2022</div>
+        </div>
+
+        <!-- Fight 3 -->
+        <div class="fight-card win">
+          <div class="fight-result">SIEG</div>
+          <div class="fight-info">
+            <h4>Ahmed Hassan</h4>
+            <div class="fight-meta">
+              TUN · Berlin, Deutschland
+              <span class="ko-badge">KO</span>
+            </div>
+          </div>
+          <div class="fight-method">
+            <span class="fight-badge">KO R3</span>
+          </div>
+          <div class="fight-date">Jun. 2022</div>
+        </div>
+
+        <!-- Fight 2 -->
+        <div class="fight-card win">
+          <div class="fight-result">SIEG</div>
+          <div class="fight-info">
+            <h4>Dmitri Volkov</h4>
+            <div class="fight-meta">RUS · Kiel, Deutschland</div>
+          </div>
+          <div class="fight-method">
+            <span class="fight-badge">PTS R4</span>
+          </div>
+          <div class="fight-date">Mär. 2022</div>
+        </div>
+
+        <!-- Fight 1 (debut) -->
+        <div class="fight-card win">
+          <div class="fight-result">SIEG</div>
+          <div class="fight-info">
+            <h4>Marcus Weber</h4>
+            <div class="fight-meta">
+              GER · Hamburg, Deutschland · Profidebüt
+              <span class="ko-badge">KO</span>
+            </div>
+          </div>
+          <div class="fight-method">
+            <span class="fight-badge">KO R1</span>
+          </div>
+          <div class="fight-date">Jan. 2022</div>
+        </div>
+
+      </div>
+
+      <!-- KO STAT -->
+      <div style="margin-top:5rem; margin-bottom:9rem;" class="reveal">
+        <div style="background:var(--dark-2); border:1px solid var(--gray-3); padding:4rem 3rem; display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; text-align:center;">
+          <div style="border-right:1px solid var(--gray-3); padding:1rem;">
+            <div style="font-family:var(--font-display); font-size:5rem; color:var(--gold);" data-counter="62">62</div>
+            <div style="font-family:var(--font-condensed); font-size:0.7rem; letter-spacing:0.25em; color:var(--gray-2); margin-top:0.3rem; text-transform:uppercase;">% KO-Quote</div>
+          </div>
+          <div style="border-right:1px solid var(--gray-3); padding:1rem;">
+            <div style="font-family:var(--font-display); font-size:5rem; color:var(--gold);" data-counter="100">100</div>
+            <div style="font-family:var(--font-condensed); font-size:0.7rem; letter-spacing:0.25em; color:var(--gray-2); margin-top:0.3rem; text-transform:uppercase;">% Siegquote</div>
+          </div>
+          <div style="padding:1rem;">
+            <div style="font-family:var(--font-display); font-size:5rem; color:var(--gold);" data-counter="3">3</div>
+            <div style="font-family:var(--font-condensed); font-size:0.7rem; letter-spacing:0.25em; color:var(--gray-2); margin-top:0.3rem; text-transform:uppercase;">Nationen bezwungen</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">HANNES <span>BRUNE</span></div>
+          <p class="footer__tagline">„Kampf ist keine Option. Es ist mein Weg."</p>
+          <div class="footer__social" style="margin-top:1.5rem;">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigation</div>
+          <nav class="footer__links">
+            <a href="index.html">Startseite</a>
+            <a href="ueber-hannes.html">Über Hannes</a>
+            <a href="kaempfe.html">Kampfbilanz</a>
+            <a href="galerie.html">Galerie</a>
+          </nav>
+        </div>
+        <div>
+          <div class="footer__col-title">Mehr</div>
+          <nav class="footer__links">
+            <a href="sponsoren.html">Sponsoren</a>
+            <a href="kontakt.html">Kontakt</a>
+          </nav>
+        </div>
+        <div>
+          <div class="footer__col-title">Kontakt</div>
+          <div class="footer__links">
+            <span style="font-family:var(--font-condensed); font-size:0.88rem; color:var(--gray-2);">management@hannesbrune.de</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">© 2024 Hannes Brune. Alle Rechte vorbehalten.</span>
+        <span class="footer__copy">Kiel · Deutschland</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
