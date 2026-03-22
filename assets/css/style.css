@@ -1445,44 +1445,143 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
 @keyframes scrollPulse   { 0% { left: -100%; } 50%, 100% { left: 100%; } }
 
 /* ============================================================
+   UTILITY: Responsive Grid-Klassen (ersetzt problematische Inline-Styles)
+   ============================================================ */
+
+/* 2-Spalten Intro-Layout (Sponsoren / Index Sponsoring-Teaser) */
+.two-col-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+/* 2×2 Stats-Kacheln */
+.grid-stats-mini {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--gray-3);
+}
+.grid-stats-mini > div {
+  background: var(--dark-2);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+/* 2-Spalten Kontakt-Info-Box (unten) */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1100px) {
-  .teaser-grid     { grid-template-columns: 1fr 1fr; }
-  .story-layout    { grid-template-columns: 1fr; gap: 3rem; }
-  .story-sidebar   { position: static; }
-  .footer__grid    { grid-template-columns: 1fr 1fr; gap: 3rem; }
-  .gallery-grid    { grid-template-columns: repeat(2, 1fr); }
-  .gallery-item--wide, .gallery-item--tall { grid-column: auto; grid-row: auto; aspect-ratio: 1; }
-  .benefits-grid   { grid-template-columns: 1fr; border-top: 1px solid var(--gray-3); border-bottom: 1px solid var(--gray-3); }
-  .benefit-item    { border-right: none; border-bottom: 1px solid var(--gray-3); }
+  .teaser-grid         { grid-template-columns: 1fr 1fr; }
+  .story-layout        { grid-template-columns: 1fr; gap: 3rem; }
+  .story-sidebar       { position: static; }
+  .footer__grid        { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .gallery-grid        { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item--wide,
+  .gallery-item--tall  { grid-column: auto; grid-row: auto; aspect-ratio: 1; }
+  .benefits-grid       { grid-template-columns: 1fr; }
+  .benefit-item        { border-right: none; border-bottom: 1px solid var(--gray-3); }
   .benefit-item:last-child { border-bottom: none; }
+  .two-col-intro       { gap: 3rem; }
 }
+
 @media (max-width: 768px) {
-  .container { padding: 0 1.5rem; }
-  .nav__inner { padding: 0 1.5rem; }
-  .nav__links { display: none; }
-  .nav__burger { display: flex; }
-  .hero__content { padding: 0 1.5rem; padding-top: 88px; }
-  .hero__record-bar { display: none; }
-  .hero__scroll-hint { display: none; }
-  .teaser-grid { grid-template-columns: 1fr; }
-  .teaser-card { height: 380px; }
-  .stats-row { grid-template-columns: 1fr 1fr; }
-  .stats-row__cell:nth-child(2n) { border-right: none; }
-  .stats-row__cell:nth-child(n+3) { border-top: 1px solid var(--gray-3); }
-  .record-header { grid-template-columns: 1fr; }
-  .record-cell { border-right: none; border-bottom: 1px solid var(--gray-3); }
+  /* Base */
+  .container           { padding: 0 1.25rem; }
+  .nav__inner          { padding: 0 1.25rem; }
+  .section-pad         { padding: 4rem 0; }
+
+  /* Nav */
+  .nav__links          { display: none; }
+  .nav__burger         { display: flex; }
+
+  /* Hero */
+  .hero__content       { padding: 0 1.25rem; padding-top: 80px; }
+  .hero__record-bar    { display: none; }
+  .hero__scroll-hint   { display: none; }
+  .hero__ghost-text    { display: none; }
+
+  /* Ticker */
+  .intro-strip__item   { padding: 0 1.5rem; }
+
+  /* Teasers */
+  .teaser-grid         { grid-template-columns: 1fr; }
+  .teaser-card         { height: 340px; }
+
+  /* Stats */
+  .stats-row           { grid-template-columns: 1fr 1fr; }
+  .stats-row__cell:nth-child(2n)   { border-right: none; }
+  .stats-row__cell:nth-child(n+3)  { border-top: 1px solid var(--gray-3); }
+  .stats-row__cell     { padding: 2rem 1rem; }
+
+  /* Story */
+  .story-layout        { padding: 4rem 0; }
+  .pull-quote          { font-size: 1.2rem; padding: 0.75rem 1.25rem; }
+
+  /* Fight Record */
+  .record-header       { grid-template-columns: 1fr; }
+  .record-cell         { border-right: none; border-bottom: 1px solid var(--gray-3); padding: 2.5rem 1.5rem; }
   .record-cell:last-child { border-bottom: none; }
-  .fight-card { grid-template-columns: 4rem 1fr; grid-template-rows: auto auto; gap: 0.75rem; }
-  .fight-method, .fight-date { grid-column: 2; }
-  .gallery-grid { grid-template-columns: 1fr; }
-  .gallery-item--wide, .gallery-item--tall { aspect-ratio: 1; }
-  .sponsors-grid { grid-template-columns: 1fr; }
-  .contact-layout { grid-template-columns: 1fr; gap: 4rem; }
-  .footer__grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .footer__bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
-  .form-row { grid-template-columns: 1fr; }
-  .page-hero { height: 45vh; min-height: 340px; }
-  .section-pad { padding: 5rem 0; }
+  .record-cell__num    { font-size: 5rem; }
+  .fight-card          { grid-template-columns: 3.5rem 1fr; grid-template-rows: auto auto; gap: 0.5rem; padding: 1.25rem 1rem; }
+  .fight-method,
+  .fight-date          { grid-column: 2; }
+  .fight-card-header   { display: none; }
+
+  /* Gallery */
+  .gallery-grid        { grid-template-columns: 1fr 1fr; gap: 2px; }
+  .gallery-item--wide  { grid-column: span 2; aspect-ratio: 16/9; }
+  .gallery-item--tall  { grid-row: auto; aspect-ratio: 1; }
+
+  /* Sponsors */
+  .sponsors-grid       { grid-template-columns: 1fr 1fr; }
+  .sponsor-item        { padding: 2rem 1.5rem; min-height: 160px; }
+  .two-col-intro       { grid-template-columns: 1fr; gap: 2.5rem; }
+  .grid-stats-mini     { grid-template-columns: 1fr 1fr; }
+  .packages-grid       { grid-template-columns: 1fr; }
+  .package-card        { border-right: none; border-bottom: 1px solid var(--gray-3); }
+  .package-card:last-child { border-bottom: none; }
+  .partner-cta-block   { padding: 3rem 1.5rem; }
+
+  /* Contact */
+  .contact-layout      { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 0; }
+  .contact-info-grid   { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .contact-channel     { padding: 1rem 1.25rem; gap: 1rem; }
+  .form-row            { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer__grid        { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer__bottom      { flex-direction: column; gap: 0.75rem; text-align: center; }
+  .footer             { padding: 4rem 0 2rem; }
+
+  /* Page Heroes */
+  .page-hero           { height: 42vh; min-height: 300px; }
+  .page-hero__content  { padding: 0 1.25rem 2.5rem; }
+
+  /* Feature Image */
+  .feature-image-block { height: 280px; }
+  .feature-image-block__caption { left: 1.25rem; }
+
+  /* Quote */
+  .quote-block         { padding: 5rem 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  .sponsors-grid       { grid-template-columns: 1fr; }
+  .gallery-grid        { grid-template-columns: 1fr; }
+  .gallery-item--wide  { grid-column: auto; aspect-ratio: 4/3; }
+  .footer__grid        { grid-template-columns: 1fr; }
+  .contact-info-grid   { grid-template-columns: 1fr; }
+  .stats-row           { grid-template-columns: 1fr; }
+  .stats-row__cell     { border-right: none; border-bottom: 1px solid var(--gray-3); }
+  .stats-row__cell:last-child { border-bottom: none; }
+  .grid-stats-mini     { grid-template-columns: 1fr 1fr; }
+  .hero__ctas          { flex-direction: column; }
+  .hero__ctas .btn     { width: 100%; justify-content: center; }
 }

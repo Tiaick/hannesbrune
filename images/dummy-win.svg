@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#0D0D0D"/>
+  <radialGradient id="g6" cx="50%" cy="40%" r="55%">
+    <stop offset="0%" stop-color="#D41B1B" stop-opacity="0.3"/>
+    <stop offset="100%" stop-color="#0D0D0D" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="400" height="400" fill="url(#g6)"/>
+  <!-- Trophy cup outline -->
+  <path d="M140 80 L260 80 L240 200 Q200 230 200 230 Q200 230 160 200 Z" fill="none" stroke="#D41B1B" stroke-width="2" stroke-opacity="0.6"/>
+  <!-- Trophy handles -->
+  <path d="M140 100 Q100 120 105 155 Q110 180 150 175" fill="none" stroke="#D41B1B" stroke-width="1.5" stroke-opacity="0.5"/>
+  <path d="M260 100 Q300 120 295 155 Q290 180 250 175" fill="none" stroke="#D41B1B" stroke-width="1.5" stroke-opacity="0.5"/>
+  <!-- Trophy stem -->
+  <line x1="200" y1="230" x2="200" y2="290" stroke="#D41B1B" stroke-width="2" stroke-opacity="0.6"/>
+  <!-- Trophy base -->
+  <line x1="155" y1="290" x2="245" y2="290" stroke="#D41B1B" stroke-width="2.5" stroke-opacity="0.6"/>
+  <line x1="165" y1="305" x2="235" y2="305" stroke="#D41B1B" stroke-width="1.5" stroke-opacity="0.4"/>
+  <!-- Star on cup -->
+  <polygon points="200,110 207,130 228,130 212,143 218,163 200,151 182,163 188,143 172,130 193,130" fill="none" stroke="#D41B1B" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="200" y="360" text-anchor="middle" font-family="serif" font-size="13" fill="#D41B1B" fill-opacity="0.5" letter-spacing="10">SIEGER</text>
+</svg>
