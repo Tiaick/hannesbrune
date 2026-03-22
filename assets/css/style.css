@@ -334,7 +334,7 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
 .page-veil {
   position: fixed;
   inset: 0;
-  background: var(--gold-dim);
+  background: var(--black);
   z-index: 9998;
   transform: scaleY(0);
   transform-origin: bottom;
