@@ -1561,7 +1561,7 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
   .footer             { padding: 4rem 0 2rem; }
 
   /* Page Heroes */
-  .page-hero           { height: 42vh; min-height: 300px; }
+  .page-hero           { height: 55vh; min-height: 420px; }
   .page-hero__content  { padding: 0 1.25rem 2.5rem; }
 
   /* Feature Image */
