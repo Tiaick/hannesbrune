@@ -1351,6 +1351,19 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
   color: var(--gray-3);
   text-transform: uppercase;
 }
+.footer__legal {
+  display: flex;
+  gap: 1.5rem;
+}
+.footer__legal a {
+  font-family: var(--font-condensed);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--gray-3);
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.footer__legal a:hover { color: var(--gold); }
 
 /* ============================================================
    HERO IMAGE STYLES

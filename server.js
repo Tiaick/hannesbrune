@@ -15,6 +15,8 @@ const pages = {
   '/galerie':   'galerie.html',
   '/sponsoren': 'sponsoren.html',
   '/kontakt':   'kontakt.html',
+  '/impressum': 'impressum.html',
+  '/datenschutz': 'datenschutz.html',
 };
 
 Object.entries(pages).forEach(([route, file]) => {
@@ -43,5 +45,7 @@ app.listen(PORT, () => {
   console.log(`  /kaempfe       Kämpfe & Record`);
   console.log(`  /galerie       Galerie`);
   console.log(`  /sponsoren     Sponsoren`);
-  console.log(`  /kontakt       Kontakt\x1b[0m\n`);
+  console.log(`  /kontakt       Kontakt`);
+  console.log(`  /impressum     Impressum`);
+  console.log(`  /datenschutz   Datenschutz\x1b[0m\n`);
 });
