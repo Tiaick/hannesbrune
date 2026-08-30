@@ -70,6 +70,73 @@
       margin-left: 0.5rem;
     }
     .ko-badge::before { content: '⚡'; font-size: 0.6rem; }
+
+    .highlight-video {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--black);
+    }
+    .highlight-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+    .highlight-video__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(6,6,6,0.35) 0%, rgba(6,6,6,0.15) 40%, rgba(6,6,6,0.6) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .highlight-video.playing .highlight-video__overlay { opacity: 0; }
+    .highlight-video__play {
+      width: 84px; height: 84px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      background: rgba(6,6,6,0.55);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      transition: transform 0.3s var(--ease-out);
+    }
+    .highlight-video:hover .highlight-video__play { transform: scale(1.08); }
+    .highlight-video.playing .highlight-video__caption { opacity: 0; }
+    .highlight-video__caption {
+      position: absolute;
+      bottom: 2rem; left: 3rem;
+      font-family: var(--font-condensed);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--cream);
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .fight-photos-strip {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 4px;
+      margin-top: 4px;
+    }
+    .fight-photos-strip img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .highlight-video { height: 340px; }
+      .highlight-video__caption { left: 1.25rem; bottom: 1.25rem; }
+      .fight-photos-strip { grid-template-columns: 1fr; }
+      .fight-photos-strip img { min-height: 220px; }
+    }
   </style>
 </head>
 <body>
@@ -292,6 +359,30 @@
         </div>
       </div>
 
+      <!-- FIGHT NIGHT HIGHLIGHTS -->
+      <div style="margin-bottom:8rem;" class="reveal">
+        <div class="fights-section-title">Fight Night · Bilder &amp; Highlights</div>
+
+        <div class="highlight-video" id="highlightVideo">
+          <video poster="images/highlights-poster.jpg" playsinline preload="metadata">
+            <source src="images/highlights.webm" type="video/webm">
+            <source src="images/highlights.mp4" type="video/mp4">
+          </video>
+          <div class="highlight-video__overlay">
+            <div class="highlight-video__play">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="highlight-video__caption">Highlights ansehen</div>
+        </div>
+
+        <div class="fight-photos-strip">
+          <img src="images/img-ring-wide.jpg" alt="Hannes Brune — Ringgeschehen">
+          <img src="images/img-ropes.jpg" alt="Hannes Brune — Treffer durch die Seile">
+          <img src="images/img-action-4.jpg" alt="Hannes Brune — Kombination im Kampf">
+        </div>
+      </div>
+
     </div>
 
   </main>
@@ -340,5 +431,20 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    // Highlights video: click poster once to start, then hand off to native controls
+    (() => {
+      const wrap = document.getElementById('highlightVideo');
+      if (!wrap) return;
+      const video = wrap.querySelector('video');
+      wrap.addEventListener('click', () => {
+        video.setAttribute('controls', '');
+        wrap.classList.add('playing');
+        video.play();
+      }, { once: true });
+      video.addEventListener('pause', () => wrap.classList.remove('playing'));
+      video.addEventListener('play', () => wrap.classList.add('playing'));
+    })();
+  </script>
 </body>
 </html>

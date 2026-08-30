@@ -182,7 +182,10 @@
 
           <!-- Item 2e — REAL VIDEO: Fight night reel -->
           <div class="gallery-item gallery-item--tall gallery-item--video gi-2e">
-            <video class="gallery-item__photo" src="images/reel.mp4" poster="images/reel-poster.jpg" autoplay muted loop playsinline></video>
+            <video class="gallery-item__photo" poster="images/reel-poster.jpg" autoplay muted loop playsinline>
+              <source src="images/reel.webm" type="video/webm">
+              <source src="images/reel.mp4" type="video/mp4">
+            </video>
             <div class="gallery-item__overlay">
               <div class="gallery-item__overlay-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
