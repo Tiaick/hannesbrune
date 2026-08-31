@@ -1604,3 +1604,12 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
   .hero__ctas          { flex-direction: column; }
   .hero__ctas .btn     { width: 100%; justify-content: center; }
 }
+
+/* Short viewports (laptops with lots of browser chrome): the vertically
+   centered hero content can collide with the absolutely-positioned
+   record bar/scroll hint pinned to the bottom corners. Hide them, same
+   as the mobile-width breakpoint already does, so the CTAs get room. */
+@media (min-width: 769px) and (max-height: 820px) {
+  .hero__record-bar    { display: none; }
+  .hero__scroll-hint   { display: none; }
+}
