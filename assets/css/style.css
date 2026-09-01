@@ -1091,7 +1091,7 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
   border-color: var(--gold-dim);
   color: var(--gold);
 }
-.sponsor-item--active .sponsor-cat { color: var(--gray-1); }
+.sponsor-item--active .sponsor-cat { color: #B3B3A9; }
 
 .sponsor-logo--img {
   width: auto;
@@ -1105,7 +1105,7 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1) opacity(0.5);
+  filter: brightness(0) invert(1) opacity(0.82);
   transition: filter 0.3s;
 }
 .sponsor-item:hover .sponsor-logo--img img {
@@ -1114,7 +1114,7 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
 /* Solid-fill badge logos lose all internal detail under the silhouette
    filter (no real alpha inside the artwork) — keep true grayscale instead */
 .sponsor-logo--img.sponsor-logo--solid img {
-  filter: grayscale(1) opacity(0.75);
+  filter: grayscale(1) opacity(0.92);
 }
 .sponsor-item:hover .sponsor-logo--img.sponsor-logo--solid img {
   filter: none;
