@@ -1093,6 +1093,19 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
 }
 .sponsor-item--active .sponsor-cat { color: #B3B3A9; }
 
+/* Open sponsor slot — this is a call-to-action for prospects, not a
+   dimmed placeholder, so it needs to read clearly rather than fade
+   into the background like an inactive tier. */
+.sponsor-item--future .sponsor-logo {
+  border-color: var(--gold-dim);
+  color: var(--gold-bright);
+}
+.sponsor-item--future .sponsor-cat { color: #B3B3A9; }
+.sponsor-item--future:hover .sponsor-logo {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
 .sponsor-logo--img {
   width: auto;
   max-width: 190px;
