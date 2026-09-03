@@ -63,7 +63,10 @@
       border-right: 1px solid var(--gray-3);
       position: relative;
       transition: background 0.3s;
+      display: flex;
+      flex-direction: column;
     }
+    .package-card > .btn { margin-top: auto; }
     .package-card:last-child { border-right: none; }
     .package-card:hover { background: var(--dark-3); }
     .package-card--featured {
