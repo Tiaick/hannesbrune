@@ -394,7 +394,7 @@
 
           <!-- Item 12 — Team Brune / Biker's Bar sponsor shirt (wide) -->
           <div class="gallery-item reveal gallery-item--wide gi-12">
-            <img class="gallery-item__photo" src="images/RAW-20.JPG" alt="Team Brune — Biker's Bar Kiel">
+            <img class="gallery-item__photo" src="images/RAW-20.JPG" alt="Team Brune — Biker's Bar Kiel" style="object-position: center 5%;">
             <div class="gallery-item__overlay">
               <div class="gallery-item__overlay-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
@@ -408,7 +408,7 @@
 
           <!-- Item 13 — Back tattoo tall -->
           <div class="gallery-item reveal gallery-item--tall gi-13">
-            <img class="gallery-item__photo" src="images/RAW-17.JPG" alt="Hannes Brune — Rücken Tattoo">
+            <img class="gallery-item__photo" src="images/RAW-17.JPG" alt="Hannes Brune — Rücken Tattoo" style="object-position: center 5%;">
             <div class="gallery-item__overlay">
               <div class="gallery-item__overlay-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
@@ -506,6 +506,21 @@
       </div>
     </div>
   </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Schließen">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Vorheriges Bild">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 4L7 12l8 8"/></svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Nächstes Bild">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4l8 8-8 8"/></svg>
+    </button>
+    <div class="lightbox__stage" id="lightboxStage"></div>
+    <div class="lightbox__caption" id="lightboxCaption"></div>
+  </div>
 
   <script src="assets/js/main.js"></script>
   <script>

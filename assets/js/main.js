@@ -133,3 +133,70 @@ document.addEventListener('keydown', e => {
     toggleMobile();
   }
 });
+
+/* ---- Gallery Lightbox ---- */
+(function () {
+  const items = Array.from(document.querySelectorAll('.gallery-grid .gallery-item'));
+  const lightbox = document.getElementById('lightbox');
+  if (!items.length || !lightbox) return;
+
+  const stage = document.getElementById('lightboxStage');
+  const caption = document.getElementById('lightboxCaption');
+  const closeBtn = document.getElementById('lightboxClose');
+  const prevBtn = document.getElementById('lightboxPrev');
+  const nextBtn = document.getElementById('lightboxNext');
+
+  const slides = items.map(item => {
+    const media = item.querySelector('img, video');
+    const title = item.querySelector('.gallery-item__label-title');
+    const isVideo = media.tagName === 'VIDEO';
+    return {
+      src: isVideo ? media.querySelector('source')?.getAttribute('src') : media.getAttribute('src'),
+      alt: media.getAttribute('alt') || '',
+      isVideo,
+      caption: title ? title.textContent : ''
+    };
+  });
+
+  let current = 0;
+
+  function render() {
+    const slide = slides[current];
+    stage.innerHTML = slide.isVideo
+      ? `<video src="${slide.src}" controls autoplay playsinline></video>`
+      : `<img src="${slide.src}" alt="${slide.alt}">`;
+    caption.textContent = slide.caption;
+  }
+
+  function open(index) {
+    current = index;
+    render();
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lightbox.classList.remove('is-open');
+    stage.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+
+  function step(delta) {
+    current = (current + delta + slides.length) % slides.length;
+    render();
+  }
+
+  items.forEach((item, index) => {
+    item.addEventListener('click', () => open(index));
+  });
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', () => step(-1));
+  nextBtn.addEventListener('click', () => step(1));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+})();
