@@ -7,7 +7,7 @@ const PORT = 3000;
 
 const resend           = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 const CONTACT_TO_EMAIL   = process.env.CONTACT_TO_EMAIL   || 'management@hannes-brune.de';
-const CONTACT_FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'Kontaktformular <onboarding@resend.dev>';
+const CONTACT_FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'Kontaktformular <management@hannes-brune.de>';
 
 // Static assets
 app.use(express.static(path.join(__dirname)));
@@ -37,7 +37,7 @@ app.post('/api/contact', async (req, res) => {
   const subjectLabel = SUBJECT_LABELS[subject] || subject;
 
   try {
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: CONTACT_FROM_EMAIL,
       to: CONTACT_TO_EMAIL,
       replyTo: email,
@@ -51,6 +51,16 @@ app.post('/api/contact', async (req, res) => {
         message,
       ].filter(Boolean).join('\n'),
     });
+
+    // The Resend SDK does not throw on API-level errors — it resolves
+    // with { data: null, error }. Must be checked explicitly, or a
+    // rejected send (e.g. unverified sender domain) looks like success.
+    if (error) {
+      console.error('Resend-Fehler:', error);
+      return res.status(502).json({ error: 'Nachricht konnte nicht gesendet werden. Bitte später erneut versuchen.' });
+    }
+
+    console.log('E-Mail gesendet, Resend-ID:', data?.id);
     res.json({ ok: true });
   } catch (err) {
     console.error('Resend-Fehler:', err);
