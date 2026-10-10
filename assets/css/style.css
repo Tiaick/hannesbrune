@@ -1444,6 +1444,13 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
   color: #B3B3A9;
   text-transform: uppercase;
 }
+.footer__credit-text {
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+.footer__credit-text:hover {
+  color: var(--gold);
+}
 .footer__credit-logo {
   display: inline-flex;
   align-items: center;
