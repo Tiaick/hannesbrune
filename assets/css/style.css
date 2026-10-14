@@ -1486,7 +1486,8 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
   display: flex;
   gap: 1.5rem;
 }
-.footer__legal a {
+.footer__legal a,
+.footer__legal button {
   font-family: var(--font-condensed);
   font-size: 0.72rem;
   letter-spacing: 0.12em;
@@ -1494,7 +1495,89 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
   text-transform: uppercase;
   transition: color 0.2s;
 }
-.footer__legal a:hover { color: var(--gold); }
+.footer__legal a:hover,
+.footer__legal button:hover { color: var(--gold); }
+
+/* ============================================================
+   CONSENT BANNER
+   ============================================================ */
+.consent {
+  position: fixed;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 9000;
+  max-width: 920px;
+  margin: 0 auto;
+  background: rgba(13,13,13,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--gray-3);
+  border-left: 3px solid var(--gold);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+}
+.consent.is-visible { opacity: 1; transform: none; }
+.consent[hidden] { display: none; }
+.consent__inner {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1.75rem 2rem;
+}
+.consent__body { flex: 1; min-width: 0; }
+.consent__eyebrow {
+  font-family: var(--font-condensed);
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.consent__title {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+.consent__text {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--off-white);
+}
+.consent__text a {
+  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--gold);
+}
+.consent__text a:hover { color: var(--gold-bright); }
+.consent__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+.consent__btn {
+  padding: 0.85rem 1.8rem;
+  font-size: 0.74rem;
+  justify-content: center;
+}
+.consent__btn:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+@media (max-width: 640px) {
+  .consent { left: 0.75rem; right: 0.75rem; bottom: 0.75rem; }
+  .consent__inner { flex-direction: column; align-items: stretch; gap: 1.25rem; padding: 1.4rem 1.25rem; }
+  .consent__actions { flex-direction: row-reverse; }
+  .consent__btn { flex: 1; padding: 0.85rem 1rem; letter-spacing: 0.2em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consent { transition: none; }
+}
 
 /* ============================================================
    HERO IMAGE STYLES

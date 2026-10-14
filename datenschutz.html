@@ -51,6 +51,8 @@
     }
     .legal-block a { color: var(--gray-1); text-decoration: underline; text-underline-offset: 3px; }
     .legal-block a:hover { color: var(--gold); }
+    .legal-inline-btn { font: inherit; color: var(--gray-1); text-decoration: underline; text-underline-offset: 3px; }
+    .legal-inline-btn:hover { color: var(--gold); }
   </style>
 </head>
 <body>
@@ -103,8 +105,9 @@
         <div class="legal-block">
           <h3>Grundsätzliches</h3>
           <p>
-            Diese Website verzichtet bewusst auf Tracking, Analyse-Tools und unnötige Cookies.
-            Es werden keine Cookies zu Analyse- oder Marketingzwecken gesetzt.
+            Diese Website setzt keine Marketing- oder Werbe-Cookies. Ein Analyse-Tool (Google Analytics)
+            wird ausschließlich dann geladen, wenn Sie über das Einwilligungs-Banner ausdrücklich zustimmen.
+            Ohne Ihre Zustimmung findet keine Verbindung zu Google statt.
           </p>
         </div>
 
@@ -125,6 +128,50 @@
             Alle auf dieser Website verwendeten Schriftarten werden lokal eingebunden und beim
             Seitenaufbau mitgeliefert. Es findet keine Verbindung zu Google Fonts oder anderen
             externen Schriftservern statt.
+          </p>
+        </div>
+
+        <div class="legal-block" id="analytics">
+          <h3>Einwilligung und Cookie-Einstellungen</h3>
+          <p>
+            Beim ersten Besuch fragen wir über ein Banner, ob Sie der Nutzung von Google Analytics zustimmen.
+            Ihre Entscheidung wird lokal in Ihrem Browser (Local Storage, Schlüssel „hb-consent“) gespeichert,
+            damit das Banner nicht bei jedem Seitenaufruf erneut erscheint. Diese Speicherung ist für die
+            Umsetzung Ihrer Wahl technisch erforderlich (§&nbsp;25 Abs.&nbsp;2 Nr.&nbsp;2 TDDDG).
+            Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen oder erteilen —
+            über den Link <button type="button" data-consent-open class="legal-inline-btn">Cookie-Einstellungen</button>
+            im Footer jeder Seite. Bei einem Widerruf werden die Analytics-Cookies gelöscht.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h3>Google Analytics</h3>
+          <p>
+            Sofern Sie eingewilligt haben, nutzt diese Website Google Analytics&nbsp;4, einen Webanalysedienst
+            der Google Ireland Limited, Gordon House, Barrow Street, Dublin&nbsp;4, Irland („Google“).
+            Google Analytics setzt Cookies (z.&nbsp;B. „_ga“, „_ga_*“) und verarbeitet Informationen über Ihre
+            Nutzung dieser Website, etwa aufgerufene Seiten, Verweildauer, ungefähre Herkunft (Land/Stadt),
+            Geräte- und Browserinformationen sowie Referrer. IP-Adressen werden in Google Analytics&nbsp;4
+            nicht gespeichert; sie werden lediglich zur Standortableitung genutzt und anschließend verworfen.
+          </p>
+          <p style="margin-top:0.75rem;">
+            <strong>Zweck:</strong> Wir möchten verstehen, welche Inhalte auf Interesse stoßen, um die Website
+            zu verbessern. Eine Zusammenführung mit anderen Daten zur Identifizierung einzelner Personen
+            erfolgt nicht.<br>
+            <strong>Rechtsgrundlage:</strong> Ihre Einwilligung (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO,
+            §&nbsp;25 Abs.&nbsp;1 TDDDG).<br>
+            <strong>Speicherdauer:</strong> Die Cookies werden bis zu 2&nbsp;Jahre gespeichert; die erhobenen
+            Nutzungsdaten werden nach 14&nbsp;Monaten automatisch gelöscht.<br>
+            <strong>Drittlandübermittlung:</strong> Es kann eine Übermittlung an Google LLC in die USA erfolgen.
+            Google ist unter dem EU-US Data Privacy Framework zertifiziert, auf dessen Grundlage ein
+            Angemessenheitsbeschluss der EU-Kommission besteht (Art.&nbsp;45 DSGVO).
+          </p>
+          <p style="margin-top:0.75rem;">
+            Wir haben mit Google einen Vertrag zur Auftragsverarbeitung (Art.&nbsp;28 DSGVO) geschlossen.
+            Weitere Informationen finden Sie in der
+            <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>
+            und unter
+            <a href="https://support.google.com/analytics/answer/6004245?hl=de" target="_blank" rel="noopener">Google Analytics – Datenschutz</a>.
           </p>
         </div>
 
@@ -222,6 +269,7 @@
         <div class="footer__legal">
           <a href="impressum.html">Impressum</a>
           <a href="datenschutz.html">Datenschutz</a>
+          <button type="button" data-consent-open>Cookie-Einstellungen</button>
         </div>
         <span class="footer__copy">© 2026 Hannes Brune. Alle Rechte vorbehalten.</span>
         <span class="footer__copy">Kiel · Deutschland</span>
@@ -230,5 +278,6 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/consent.js"></script>
 </body>
 </html>
