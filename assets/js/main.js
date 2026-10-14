@@ -226,3 +226,45 @@ document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight') step(1);
   });
 })();
+
+/* ---- Fight Night: Countdown ---- */
+(function () {
+  const sections = document.querySelectorAll('.fightnight');
+  if (!sections.length) return;
+
+  const DAY = 864e5;
+  const pad = n => String(n).padStart(2, '0');
+
+  sections.forEach(section => {
+    const clock = section.querySelector('[data-countdown]');
+    if (!clock) return;
+    const start = new Date(clock.dataset.countdown).getTime();
+    const end   = start + DAY; // Kampftag endet um Mitternacht Ortszeit
+    const nums  = {};
+    clock.querySelectorAll('[data-unit]').forEach(el => { nums[el.dataset.unit] = el; });
+    let timer;
+
+    function tick() {
+      const now = Date.now();
+      if (now >= end) {
+        section.hidden = true;
+        clearInterval(timer);
+        return;
+      }
+      if (now >= start) {
+        clock.querySelector('.fightnight__clock-label').textContent = 'Heute in Amsterdam';
+        clock.querySelector('.fightnight__countdown').innerHTML = '<span class="fightnight__today">Heute Nacht · Fight Night</span>';
+        clearInterval(timer);
+        return;
+      }
+      const diff = Math.floor((start - now) / 1000);
+      nums.d.textContent = pad(Math.floor(diff / 86400));
+      nums.h.textContent = pad(Math.floor(diff % 86400 / 3600));
+      nums.m.textContent = pad(Math.floor(diff % 3600 / 60));
+      nums.s.textContent = pad(diff % 60);
+    }
+
+    tick();
+    timer = setInterval(tick, 1000);
+  });
+})();
