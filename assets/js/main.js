@@ -162,7 +162,7 @@ document.addEventListener('keydown', e => {
 
 /* ---- Gallery Lightbox ---- */
 (function () {
-  const items = Array.from(document.querySelectorAll('.gallery-grid .gallery-item'));
+  const items = Array.from(document.querySelectorAll('.gallery-grid .gallery-item, [data-lightbox]'));
   const lightbox = document.getElementById('lightbox');
   if (!items.length || !lightbox) return;
 
@@ -173,11 +173,15 @@ document.addEventListener('keydown', e => {
   const nextBtn = document.getElementById('lightboxNext');
 
   const slides = items.map(item => {
+    if (item.hasAttribute('data-lightbox')) {
+      const img = item.querySelector('img');
+      return { src: item.getAttribute('href'), alt: img ? img.alt : '', isVideo: false, caption: item.dataset.caption || '' };
+    }
     const media = item.querySelector('img, video');
     const title = item.querySelector('.gallery-item__label-title');
     const isVideo = media.tagName === 'VIDEO';
     return {
-      src: isVideo ? media.querySelector('source')?.getAttribute('src') : media.getAttribute('src'),
+      src: isVideo ? media.querySelector('source')?.getAttribute('src') : (media.dataset.full || media.getAttribute('src')),
       alt: media.getAttribute('alt') || '',
       isVideo,
       caption: title ? title.textContent : ''
@@ -213,7 +217,7 @@ document.addEventListener('keydown', e => {
   }
 
   items.forEach((item, index) => {
-    item.addEventListener('click', () => open(index));
+    item.addEventListener('click', e => { e.preventDefault(); open(index); });
   });
   closeBtn.addEventListener('click', close);
   prevBtn.addEventListener('click', () => step(-1));

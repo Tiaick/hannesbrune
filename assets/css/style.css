@@ -1672,33 +1672,66 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
   color: var(--cream);
 }
 
-/* Tale of the tape */
+/* Tale of the tape — stat comparison */
 .fightnight__tape {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
   margin-top: 2rem;
   font-family: var(--font-condensed);
   text-transform: uppercase;
 }
-.fightnight__corner { display: flex; flex-direction: column; gap: 0.35rem; }
-.fightnight__corner--opp { text-align: right; }
-.fightnight__corner-label {
-  font-size: 0.64rem;
-  letter-spacing: 0.32em;
+.fightnight__tape-row {
+  display: grid;
+  grid-template-columns: 1fr minmax(8.5rem, auto) 1fr;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-3);
+}
+.fightnight__tape-row > div:first-child { text-align: left; }
+.fightnight__tape-row > div:last-child  { text-align: right; }
+.fightnight__tape-row > div[role="cell"] {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  line-height: 1;
+  padding: 0.45rem 0 0.35rem;
+  color: var(--cream);
+}
+.fightnight__tape-row > div[role="cell"] em {
+  font-style: normal;
+  font-size: 0.6em;
+  color: var(--gray-1);
+  margin-left: 0.05em;
+}
+.fightnight__tape-key {
+  text-align: center;
+  font-size: 0.66rem;
+  letter-spacing: 0.3em;
+  color: var(--gray-1);
+  padding: 0 1rem;
+}
+.fightnight__tape-row--head { border-bottom-color: var(--gold-dim); align-items: start; }
+.fightnight__tape-row--head > div { padding-bottom: 0.7rem; }
+.fightnight__tape-row--head b {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--cream);
+  line-height: 1;
+}
+.fightnight__tape-row--head small {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  line-height: 1.5;
   color: var(--gold-bright);
-  margin-bottom: 0.25rem;
 }
-.fightnight__corner span:not(.fightnight__corner-label) {
-  font-size: 0.86rem;
-  letter-spacing: 0.1em;
-  color: var(--off-white);
-}
-.fightnight__corner b { color: var(--cream); font-weight: 700; }
-.fightnight__tape-mid {
-  align-self: stretch;
-  width: 1px;
-  margin: 0 1.75rem;
-  background: var(--gray-3);
+.fightnight__tape-row--head .fightnight__tape-key { color: var(--gold-bright); }
+
+.fightnight__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.25rem;
 }
 
 /* Countdown — fight clock */
@@ -1758,6 +1791,82 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
   letter-spacing: 0.04em;
 }
 
+/* Official posters (Kämpfe page) */
+.fightposters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr) minmax(0, 0.85fr);
+  gap: 1.25rem;
+  align-items: end;
+  margin-bottom: 6rem;
+}
+.fightposters__intro { align-self: center; padding-right: 2rem; }
+.fightposters__title {
+  font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+  line-height: 0.92;
+  margin-bottom: 1.25rem;
+}
+.fightposters__title span { color: var(--gold); }
+.fightposters__intro p {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--gray-1);
+  max-width: 380px;
+  margin-bottom: 1.5rem;
+}
+.fightposters__link {
+  font-family: var(--font-condensed);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cream);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 0.3rem;
+  transition: color 0.2s;
+}
+.fightposters__link:hover { color: var(--gold-bright); }
+.fightposters__item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--gray-3);
+  background: var(--dark-2);
+  cursor: zoom-in;
+  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out), border-color 0.3s;
+}
+.fightposters__item:nth-child(3) { transform: translateY(-2.5rem); }
+.fightposters__item img { width: 100%; height: auto; transition: transform 0.8s var(--ease-out); }
+.fightposters__item:hover {
+  border-color: var(--gold);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.6), 0 0 0 1px var(--gold);
+}
+.fightposters__item:hover img { transform: scale(1.03); }
+.fightposters__item:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 4px; }
+.fightposters__zoom {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 2.5rem 1rem 0.9rem;
+  background: linear-gradient(to top, rgba(6,6,6,0.9), transparent);
+  font-family: var(--font-condensed);
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.fightposters__item:hover .fightposters__zoom,
+.fightposters__item:focus-visible .fightposters__zoom { opacity: 1; transform: none; }
+@media (max-width: 960px) {
+  .fightposters { grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 4.5rem; }
+  .fightposters__intro { grid-column: 1 / -1; padding-right: 0; margin-bottom: 1rem; }
+  .fightposters__item:nth-child(3) { transform: none; }
+  .fightposters__zoom { opacity: 1; transform: none; padding: 2rem 0.75rem 0.6rem; font-size: 0.6rem; }
+}
+
 @keyframes fnPulse {
   0%   { box-shadow: 0 0 0 0 rgba(232,58,58,0.6); }
   70%  { box-shadow: 0 0 0 12px rgba(232,58,58,0); }
@@ -1783,7 +1892,9 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
   .fightnight__body { margin-top: -6rem; padding: 0 1.25rem 3.5rem; }
   .fightnight__facts { flex-direction: row; }
   .fightnight__fact { flex: 1 1 100%; }
-  .fightnight__tape-mid { margin: 0 1rem; }
+  .fightnight__tape-row { grid-template-columns: 1fr minmax(6.5rem, auto) 1fr; }
+  .fightnight__tape-key { padding: 0 0.5rem; letter-spacing: 0.2em; }
+  .fightnight__ctas .btn { flex: 1 1 100%; justify-content: center; }
   .fightnight__countdown { gap: 0.25rem; }
   .fightnight__unit { flex: 1; min-width: 0; padding: 0.7rem 0.25rem 0.6rem; }
   .fightnight__sep { display: none; }

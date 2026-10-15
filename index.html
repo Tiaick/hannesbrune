@@ -25,12 +25,12 @@
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": "Boxing Gladiators IV — Battle at the Sea: Michiel Partoens vs. Hannes Brune",
-    "description": "Co-Main Event im Cruisergewicht: Hannes Brune (10-0-0, 7 KO) trifft auf Michiel Partoens.",
+    "description": "Co-Main Event im Cruisergewicht: Hannes Brune (10-0-0, 7 KO) trifft auf Michiel Partoens (13-0-0, 9 KO).",
     "sport": "Boxing",
     "startDate": "2026-11-28",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "image": "https://hannes-brune.de/images/fight-brune-1200.jpg",
+    "image": "https://hannes-brune.de/images/faceoff-brune-1200.jpg",
     "location": {
       "@type": "Place",
       "name": "Passenger Terminal Amsterdam",
@@ -196,8 +196,8 @@
     <section class="fightnight" data-fight-date="2026-11-28" aria-labelledby="fightnightTitle">
       <div class="fightnight__media">
         <picture>
-          <source type="image/webp" srcset="images/fight-brune-700.webp 700w, images/fight-brune-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 50vw">
-          <img src="images/fight-brune-1200.jpg" width="1200" height="1498" alt="Hannes Brune — Face-off-Porträt vor dem Kampf gegen Michiel Partoens" loading="lazy" decoding="async">
+          <source type="image/webp" srcset="images/faceoff-brune-700.webp 700w, images/faceoff-brune-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 50vw">
+          <img src="images/faceoff-brune-1200.jpg" width="1200" height="1500" alt="Hannes Brune — Face-off-Porträt vor dem Kampf gegen Michiel Partoens" loading="lazy" decoding="async">
         </picture>
       </div>
       <div class="fightnight__slash" aria-hidden="true"></div>
@@ -218,20 +218,16 @@
           <div class="fightnight__fact"><dt>Klasse</dt><dd>Cruisergewicht</dd></div>
         </dl>
 
-        <div class="fightnight__tape reveal">
-          <div class="fightnight__corner">
-            <span class="fightnight__corner-label">Hannes Brune</span>
-            <span><b>Deutschland</b></span>
-            <span><b>10-0-0</b> · 7 KO</span>
-            <span>Ungeschlagen</span>
+        <div class="fightnight__tape reveal" role="table" aria-label="Tale of the Tape">
+          <div class="fightnight__tape-row fightnight__tape-row--head" role="row">
+            <div role="columnheader"><b>Brune</b><small>Deutschland · UBF European</small></div>
+            <div role="columnheader" class="fightnight__tape-key">Tale of the Tape</div>
+            <div role="columnheader"><b>Partoens</b><small>Belgien · IBO International</small></div>
           </div>
-          <div class="fightnight__tape-mid" aria-hidden="true"></div>
-          <div class="fightnight__corner fightnight__corner--opp">
-            <span class="fightnight__corner-label">Michiel Partoens</span>
-            <span><b>Belgien</b></span>
-            <span>Benelux Champion</span>
-            <span>IBO International</span>
-          </div>
+          <div class="fightnight__tape-row" role="row"><div role="cell">10</div><div role="rowheader" class="fightnight__tape-key">Siege</div><div role="cell">13</div></div>
+          <div class="fightnight__tape-row" role="row"><div role="cell">0</div><div role="rowheader" class="fightnight__tape-key">Niederlagen</div><div role="cell">0</div></div>
+          <div class="fightnight__tape-row" role="row"><div role="cell">7</div><div role="rowheader" class="fightnight__tape-key">K.o.-Siege</div><div role="cell">9</div></div>
+          <div class="fightnight__tape-row" role="row"><div role="cell">70<em>%</em></div><div role="rowheader" class="fightnight__tape-key">K.o.-Quote</div><div role="cell">69<em>%</em></div></div>
         </div>
 
         <div class="fightnight__clock reveal" data-countdown="2026-11-28T00:00:00+01:00">
@@ -245,6 +241,11 @@
             <span class="fightnight__sep" aria-hidden="true">:</span>
             <div class="fightnight__unit"><span class="fightnight__num" data-unit="s">--</span><span class="fightnight__unit-lbl">Sek</span></div>
           </div>
+        </div>
+
+        <div class="fightnight__ctas reveal">
+          <a href="https://boxinggladiators.com" target="_blank" rel="noopener" class="btn btn--gold">Tickets sichern <span class="btn-arrow">→</span></a>
+          <a href="kaempfe.html#naechster-kampf" class="btn btn--outline">Plakate &amp; Infos</a>
         </div>
       </div>
     </section>
