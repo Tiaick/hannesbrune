@@ -232,8 +232,10 @@ document.addEventListener('keydown', e => {
     function tick() {
       const now = Date.now();
       if (now >= end) {
-        section.hidden = true;
         clearInterval(timer);
+        // Auf der Kampfseite bleibt der Block stehen, nur der Countdown verschwindet
+        if (section.hasAttribute('data-persist')) clock.hidden = true;
+        else section.hidden = true;
         return;
       }
       if (now >= start) {

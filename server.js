@@ -82,6 +82,7 @@ const pages = {
   '/':          'index.html',
   '/ueber':     'ueber-hannes.html',
   '/kaempfe':   'kaempfe.html',
+  '/brune-vs-partoens': 'brune-vs-partoens.html',
   '/galerie':   'galerie.html',
   '/sponsoren': 'sponsoren.html',
   '/kontakt':   'kontakt.html',

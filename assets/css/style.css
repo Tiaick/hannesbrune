@@ -31,6 +31,12 @@
   --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
 }
 
+/* ---- Utilities ---- */
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; }
@@ -1797,6 +1803,122 @@ h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
   color: var(--gold-bright);
   letter-spacing: 0.04em;
 }
+
+/* Fight page (brune-vs-partoens.html) */
+.fightnight--page { padding-top: 84px; min-height: 100vh; border-top: 0; }
+.fp-breadcrumb {
+  display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;
+  padding: 2.25rem 0 0;
+  font-family: var(--font-condensed); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gray-1);
+}
+.fp-breadcrumb a:hover { color: var(--gold-bright); }
+.fp-breadcrumb [aria-current] { color: var(--cream); }
+.fp-article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  gap: 5rem;
+  align-items: start;
+  padding: 4.5rem 0 6rem;
+}
+.fp-h2 { font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 0.92; margin-bottom: 1.75rem; }
+.fp-h2 span { color: var(--gold); }
+.fp-h3 {
+  font-family: var(--font-condensed); font-weight: 700; font-size: 1.15rem; letter-spacing: 0.14em;
+  text-transform: uppercase; line-height: 1.3; color: var(--cream);
+  margin: 2.5rem 0 0.75rem;
+}
+.fp-article__main p, .fp-faq p {
+  font-weight: 300; font-size: 1.05rem; line-height: 1.85; color: var(--off-white); max-width: 680px;
+}
+.fp-article__main a, .fp-faq p a { color: var(--cream); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+.fp-article__main a:hover, .fp-faq p a:hover { color: var(--gold-bright); }
+.fp-lead { font-size: 1.2rem !important; color: var(--cream) !important; }
+.fp-lead strong, .fp-article__main strong { font-weight: 500; color: var(--cream); }
+.fp-facts {
+  position: sticky; top: 110px;
+  background: var(--dark-2); border: 1px solid var(--gray-3); border-top: 3px solid var(--gold);
+  padding: 2rem 1.75rem;
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+.fp-facts__title {
+  font-family: var(--font-condensed); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.35em;
+  text-transform: uppercase; color: var(--gold-bright);
+}
+.fp-facts dl > div { padding: 0.8rem 0; border-bottom: 1px solid var(--gray-3); }
+.fp-facts dt {
+  font-family: var(--font-condensed); font-size: 0.64rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gray-1); margin-bottom: 0.25rem;
+}
+.fp-facts dd { font-family: var(--font-condensed); font-weight: 600; font-size: 1rem; letter-spacing: 0.04em; color: var(--cream); }
+.fp-facts__cta { justify-content: center; }
+.fp-faq { max-width: 860px; padding: 2rem 0 5rem; }
+.fp-faq details { border-bottom: 1px solid var(--gray-3); }
+.fp-faq details:first-of-type { border-top: 1px solid var(--gray-3); }
+.fp-faq summary {
+  list-style: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 1.5rem;
+  padding: 1.35rem 0;
+  font-family: var(--font-condensed); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--cream);
+  transition: color 0.2s;
+}
+.fp-faq summary::-webkit-details-marker { display: none; }
+.fp-faq summary::after { content: '+'; font-family: var(--font-display); font-size: 1.9rem; color: var(--gold); transition: transform 0.3s var(--ease-out); flex-shrink: 0; }
+.fp-faq details[open] summary::after { transform: rotate(45deg); }
+.fp-faq summary:hover { color: var(--gold-bright); }
+.fp-faq summary:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 4px; }
+.fp-faq details p { padding: 0 0 1.5rem; }
+.fp-next { display: flex; flex-wrap: wrap; gap: 0.75rem; padding: 0 0 7rem; }
+@media (max-width: 960px) {
+  .fp-article { grid-template-columns: 1fr; gap: 3rem; padding: 3rem 0 4rem; }
+  .fp-facts { position: static; }
+}
+@media (max-width: 860px) {
+  .fightnight--page { padding-top: 64px; min-height: 0; }
+}
+@media (max-width: 640px) {
+  .fp-next .btn { flex: 1 1 100%; justify-content: center; }
+}
+
+/* Über Hannes: Steckbrief */
+.profile-h2 { font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 0.92; margin-bottom: 1.75rem; color: var(--cream); }
+.story-content p a { color: var(--cream); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+.story-content p a:hover { color: var(--gold-bright); }
+.profile-facts {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 2.25rem; border-top: 1px solid var(--gray-3);
+}
+.profile-facts > div { padding: 1rem 1.5rem 1rem 0; border-bottom: 1px solid var(--gray-3); }
+.profile-facts dt {
+  font-family: var(--font-condensed); font-size: 0.64rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gray-1); margin-bottom: 0.25rem;
+}
+.profile-facts dd { font-family: var(--font-condensed); font-weight: 600; font-size: 1.05rem; letter-spacing: 0.04em; color: var(--cream); }
+.profile-facts dd a { color: var(--gold-bright); }
+@media (max-width: 340px) { .profile-facts { grid-template-columns: 1fr; } }
+
+/* Kämpfe: Titel-Block */
+.titleblock {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 4rem; align-items: center; margin-bottom: 6rem;
+  scroll-margin-top: 96px;
+}
+.titleblock__media { position: relative; overflow: hidden; border: 1px solid var(--gray-3); }
+.titleblock__media img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.titleblock__media::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(6,6,6,0.55), transparent 45%);
+}
+.titleblock__h2 { font-size: clamp(2.8rem, 5.4vw, 5rem); line-height: 0.9; margin-bottom: 1.5rem; }
+.titleblock__h2 span { color: var(--gold); }
+.titleblock__body p { font-weight: 300; font-size: 1.05rem; line-height: 1.85; color: var(--off-white); max-width: 560px; }
+.titleblock__body p strong { color: var(--cream); font-weight: 500; }
+.titleblock__facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 2rem; border-top: 1px solid var(--gray-3); }
+.titleblock__facts > div { padding: 0.9rem 1.25rem 0.9rem 0; border-bottom: 1px solid var(--gray-3); }
+.titleblock__facts dt { font-family: var(--font-condensed); font-size: 0.64rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gray-1); margin-bottom: 0.25rem; }
+.titleblock__facts dd { font-family: var(--font-condensed); font-weight: 600; font-size: 1.02rem; color: var(--cream); }
+@media (max-width: 900px) { .titleblock { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4.5rem; } }
 
 /* Official posters (Kämpfe page) */
 .fightposters {
