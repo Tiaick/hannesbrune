@@ -29,10 +29,17 @@
     gtag('js', new Date());
     gtag('config', GA_ID);
 
-    const s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-    document.head.appendChild(s);
+    // gtag.js erst nach dem load-Event holen, damit es den Seitenaufbau
+    // (und den Ladebalken) nicht verlängert. Der dataLayer puffert bis dahin.
+    const inject = () => {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(s);
+    };
+    const idle = window.requestIdleCallback || (cb => setTimeout(cb, 1));
+    if (document.readyState === 'complete') idle(inject);
+    else window.addEventListener('load', () => idle(inject), { once: true });
   }
 
   function clearAnalyticsCookies() {
