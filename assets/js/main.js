@@ -272,3 +272,6 @@ document.addEventListener('keydown', e => {
     timer = setInterval(tick, 1000);
   });
 })();
+
+/* ---- Footer: aktuelles Jahr ---- */
+document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
