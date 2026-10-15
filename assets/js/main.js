@@ -51,25 +51,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 revealEls.forEach(el => revealObserver.observe(el));
 
-/* ---- Page Transition ---- */
-const veil = document.querySelector('.page-veil');
-document.querySelectorAll('a[href]').forEach(link => {
-  const href = link.getAttribute('href');
-  if (!href) return;
-  if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http')) return;
-  if (href.endsWith('.html') || href === '' || href === '/') {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      if (veil) {
-        veil.classList.add('active');
-        setTimeout(() => { window.location.href = href; }, 480);
-      } else {
-        window.location.href = href;
-      }
-    });
-  }
-});
-
 /* ---- Parallax on Hero ghost text ---- */
 const ghostText = document.querySelector('.hero__ghost-text');
 if (ghostText) {

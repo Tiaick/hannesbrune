@@ -10,7 +10,16 @@ const CONTACT_TO_EMAIL   = process.env.CONTACT_TO_EMAIL   || 'management@hannes-
 const CONTACT_FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'Kontaktformular <management@hannes-brune.de>';
 
 // Static assets
-app.use(express.static(path.join(__dirname)));
+// Caching: media/fonts long-lived, CSS/JS short, HTML always revalidated
+const LONG_CACHE  = /\.(webp|jpe?g|png|svg|gif|mp4|webm|woff2?)$/i;
+const SHORT_CACHE = /\.(css|js)$/i;
+app.use(express.static(path.join(__dirname), {
+  setHeaders(res, filePath) {
+    if (LONG_CACHE.test(filePath))       res.setHeader('Cache-Control', 'public, max-age=2592000');
+    else if (SHORT_CACHE.test(filePath)) res.setHeader('Cache-Control', 'public, max-age=600, stale-while-revalidate=86400');
+    else                                 res.setHeader('Cache-Control', 'no-cache');
+  },
+}));
 app.use(express.json());
 
 const SUBJECT_LABELS = {
