@@ -13,11 +13,11 @@
   <meta property="og:site_name" content="Hannes Brune">
   <meta property="og:title" content="Datenschutz — Hannes Brune · Profi Boxer">
   <meta property="og:description" content="Datenschutzerklärung von Hannes Brune, Profi Boxer aus Kiel.">
-  <meta property="og:image" content="https://hannes-brune.de/images/RAW-11.JPG">
+  <meta property="og:image" content="https://hannes-brune.de/images/opt/raw-11-1200.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Datenschutz — Hannes Brune · Profi Boxer">
   <meta name="twitter:description" content="Datenschutzerklärung von Hannes Brune, Profi Boxer aus Kiel.">
-  <meta name="twitter:image" content="https://hannes-brune.de/images/RAW-11.JPG">
+  <meta name="twitter:image" content="https://hannes-brune.de/images/opt/raw-11-1200.jpg">
   <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
@@ -51,6 +51,8 @@
     }
     .legal-block a { color: var(--gray-1); text-decoration: underline; text-underline-offset: 3px; }
     .legal-block a:hover { color: var(--gold); }
+    .legal-inline-btn { font: inherit; color: var(--gray-1); text-decoration: underline; text-underline-offset: 3px; }
+    .legal-inline-btn:hover { color: var(--gold); }
   </style>
 </head>
 <body>
@@ -103,8 +105,9 @@
         <div class="legal-block">
           <h3>Grundsätzliches</h3>
           <p>
-            Diese Website verzichtet bewusst auf Tracking, Analyse-Tools und unnötige Cookies.
-            Es werden keine Cookies zu Analyse- oder Marketingzwecken gesetzt.
+            Diese Website setzt keine Marketing- oder Werbe-Cookies. Ein Analyse-Tool (Google Analytics)
+            wird ausschließlich dann geladen, wenn Sie über das Einwilligungs-Banner ausdrücklich zustimmen.
+            Ohne Ihre Zustimmung findet keine Verbindung zu Google statt.
           </p>
         </div>
 
@@ -125,6 +128,50 @@
             Alle auf dieser Website verwendeten Schriftarten werden lokal eingebunden und beim
             Seitenaufbau mitgeliefert. Es findet keine Verbindung zu Google Fonts oder anderen
             externen Schriftservern statt.
+          </p>
+        </div>
+
+        <div class="legal-block" id="analytics">
+          <h3>Einwilligung und Cookie-Einstellungen</h3>
+          <p>
+            Beim ersten Besuch fragen wir über ein Banner, ob Sie der Nutzung von Google Analytics zustimmen.
+            Ihre Entscheidung wird lokal in Ihrem Browser (Local Storage, Schlüssel „hb-consent“) gespeichert,
+            damit das Banner nicht bei jedem Seitenaufruf erneut erscheint. Diese Speicherung ist für die
+            Umsetzung Ihrer Wahl technisch erforderlich (§&nbsp;25 Abs.&nbsp;2 Nr.&nbsp;2 TDDDG).
+            Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen oder erteilen —
+            über den Link <button type="button" data-consent-open class="legal-inline-btn">Cookie-Einstellungen</button>
+            im Footer jeder Seite. Bei einem Widerruf werden die Analytics-Cookies gelöscht.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h3>Google Analytics</h3>
+          <p>
+            Sofern Sie eingewilligt haben, nutzt diese Website Google Analytics&nbsp;4, einen Webanalysedienst
+            der Google Ireland Limited, Gordon House, Barrow Street, Dublin&nbsp;4, Irland („Google“).
+            Google Analytics setzt Cookies (z.&nbsp;B. „_ga“, „_ga_*“) und verarbeitet Informationen über Ihre
+            Nutzung dieser Website, etwa aufgerufene Seiten, Verweildauer, ungefähre Herkunft (Land/Stadt),
+            Geräte- und Browserinformationen sowie Referrer. IP-Adressen werden in Google Analytics&nbsp;4
+            nicht gespeichert; sie werden lediglich zur Standortableitung genutzt und anschließend verworfen.
+          </p>
+          <p style="margin-top:0.75rem;">
+            <strong>Zweck:</strong> Wir möchten verstehen, welche Inhalte auf Interesse stoßen, um die Website
+            zu verbessern. Eine Zusammenführung mit anderen Daten zur Identifizierung einzelner Personen
+            erfolgt nicht.<br>
+            <strong>Rechtsgrundlage:</strong> Ihre Einwilligung (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO,
+            §&nbsp;25 Abs.&nbsp;1 TDDDG).<br>
+            <strong>Speicherdauer:</strong> Die Cookies werden bis zu 2&nbsp;Jahre gespeichert; die erhobenen
+            Nutzungsdaten werden nach 14&nbsp;Monaten automatisch gelöscht.<br>
+            <strong>Drittlandübermittlung:</strong> Es kann eine Übermittlung an Google LLC in die USA erfolgen.
+            Google ist unter dem EU-US Data Privacy Framework zertifiziert, auf dessen Grundlage ein
+            Angemessenheitsbeschluss der EU-Kommission besteht (Art.&nbsp;45 DSGVO).
+          </p>
+          <p style="margin-top:0.75rem;">
+            Wir haben mit Google einen Vertrag zur Auftragsverarbeitung (Art.&nbsp;28 DSGVO) geschlossen.
+            Weitere Informationen finden Sie in der
+            <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>
+            und unter
+            <a href="https://support.google.com/analytics/answer/6004245?hl=de" target="_blank" rel="noopener">Google Analytics – Datenschutz</a>.
           </p>
         </div>
 
@@ -180,11 +227,8 @@
           <div class="footer__logo">HANNES <span>BRUNE</span></div>
           <p class="footer__tagline">„Kämpfen ist meine Bestimmung. Es ist mein Weg."</p>
           <div class="footer__social" style="margin-top:1.5rem;">
-            <a href="#" class="social-link" aria-label="Instagram">
+            <a href="https://www.instagram.com/hannesbrunekiel/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram @hannesbrunekiel">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
-            </a>
-            <a href="#" class="social-link" aria-label="Facebook">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a4 4 0 00-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 011-1h3z"/></svg>
             </a>
           </div>
         </div>
@@ -213,22 +257,24 @@
         </div>
       </div>
       <div class="footer__credit">
-        <span class="footer__credit-label">Website erstellt von</span>
+        <a href="https://keep-it-fair.de/webseiten" target="_blank" rel="noopener" class="footer__credit-label footer__credit-text">Website erstellt von Keep IT Fair</a>
         <a href="https://keep-it-fair.de" target="_blank" rel="noopener" class="footer__credit-logo">
-          <img src="images/keep-it-fair-logo.png" alt="Keep IT Fair">
+          <img src="images/keep-it-fair-logo.png" alt="Keep IT Fair – Webdesign und IT-Sicherheit aus Norderstedt" loading="lazy" decoding="async">
         </a>
       </div>
       <div class="footer__bottom">
         <div class="footer__legal">
           <a href="impressum.html">Impressum</a>
           <a href="datenschutz.html">Datenschutz</a>
+          <button type="button" data-consent-open>Cookie-Einstellungen</button>
         </div>
-        <span class="footer__copy">© 2026 Hannes Brune. Alle Rechte vorbehalten.</span>
+        <span class="footer__copy">© <span data-year>2026</span> Hannes Brune. Alle Rechte vorbehalten.</span>
         <span class="footer__copy">Kiel · Deutschland</span>
       </div>
     </div>
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/consent.js"></script>
 </body>
 </html>

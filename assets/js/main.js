@@ -51,25 +51,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 revealEls.forEach(el => revealObserver.observe(el));
 
-/* ---- Page Transition ---- */
-const veil = document.querySelector('.page-veil');
-document.querySelectorAll('a[href]').forEach(link => {
-  const href = link.getAttribute('href');
-  if (!href) return;
-  if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http')) return;
-  if (href.endsWith('.html') || href === '' || href === '/') {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      if (veil) {
-        veil.classList.add('active');
-        setTimeout(() => { window.location.href = href; }, 480);
-      } else {
-        window.location.href = href;
-      }
-    });
-  }
-});
-
 /* ---- Parallax on Hero ghost text ---- */
 const ghostText = document.querySelector('.hero__ghost-text');
 if (ghostText) {
@@ -162,7 +143,7 @@ document.addEventListener('keydown', e => {
 
 /* ---- Gallery Lightbox ---- */
 (function () {
-  const items = Array.from(document.querySelectorAll('.gallery-grid .gallery-item'));
+  const items = Array.from(document.querySelectorAll('.gallery-grid .gallery-item, [data-lightbox]'));
   const lightbox = document.getElementById('lightbox');
   if (!items.length || !lightbox) return;
 
@@ -173,11 +154,15 @@ document.addEventListener('keydown', e => {
   const nextBtn = document.getElementById('lightboxNext');
 
   const slides = items.map(item => {
+    if (item.hasAttribute('data-lightbox')) {
+      const img = item.querySelector('img');
+      return { src: item.getAttribute('href'), alt: img ? img.alt : '', isVideo: false, caption: item.dataset.caption || '' };
+    }
     const media = item.querySelector('img, video');
     const title = item.querySelector('.gallery-item__label-title');
     const isVideo = media.tagName === 'VIDEO';
     return {
-      src: isVideo ? media.querySelector('source')?.getAttribute('src') : media.getAttribute('src'),
+      src: isVideo ? media.querySelector('source')?.getAttribute('src') : (media.dataset.full || media.getAttribute('src')),
       alt: media.getAttribute('alt') || '',
       isVideo,
       caption: title ? title.textContent : ''
@@ -213,7 +198,7 @@ document.addEventListener('keydown', e => {
   }
 
   items.forEach((item, index) => {
-    item.addEventListener('click', () => open(index));
+    item.addEventListener('click', e => { e.preventDefault(); open(index); });
   });
   closeBtn.addEventListener('click', close);
   prevBtn.addEventListener('click', () => step(-1));
@@ -226,3 +211,50 @@ document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight') step(1);
   });
 })();
+
+/* ---- Fight Night: Countdown ---- */
+(function () {
+  const sections = document.querySelectorAll('.fightnight');
+  if (!sections.length) return;
+
+  const DAY = 864e5;
+  const pad = n => String(n).padStart(2, '0');
+
+  sections.forEach(section => {
+    const clock = section.querySelector('[data-countdown]');
+    if (!clock) return;
+    const start = new Date(clock.dataset.countdown).getTime();
+    const end   = start + DAY; // Kampftag endet um Mitternacht Ortszeit
+    const nums  = {};
+    clock.querySelectorAll('[data-unit]').forEach(el => { nums[el.dataset.unit] = el; });
+    let timer;
+
+    function tick() {
+      const now = Date.now();
+      if (now >= end) {
+        clearInterval(timer);
+        // Auf der Kampfseite bleibt der Block stehen, nur der Countdown verschwindet
+        if (section.hasAttribute('data-persist')) clock.hidden = true;
+        else section.hidden = true;
+        return;
+      }
+      if (now >= start) {
+        clock.querySelector('.fightnight__clock-label').textContent = 'Heute in Amsterdam';
+        clock.querySelector('.fightnight__countdown').innerHTML = '<span class="fightnight__today">Heute Nacht · Fight Night</span>';
+        clearInterval(timer);
+        return;
+      }
+      const diff = Math.floor((start - now) / 1000);
+      nums.d.textContent = pad(Math.floor(diff / 86400));
+      nums.h.textContent = pad(Math.floor(diff % 86400 / 3600));
+      nums.m.textContent = pad(Math.floor(diff % 3600 / 60));
+      nums.s.textContent = pad(diff % 60);
+    }
+
+    tick();
+    timer = setInterval(tick, 1000);
+  });
+})();
+
+/* ---- Footer: aktuelles Jahr ---- */
+document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
